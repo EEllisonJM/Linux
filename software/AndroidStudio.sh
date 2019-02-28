@@ -1,6 +1,6 @@
 #/bin/bash
 
-echo "Install ADB and Fastboot"
+echo "= = = = Install ADB and Fastboot = = = = "
 sudo apt update
 sudo apt install -y android-tools-adb android-tools-fastboot
 echo "Check ADB version"
