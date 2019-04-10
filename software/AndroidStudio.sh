@@ -10,7 +10,11 @@ echo "Permision denied /deb/kvm"
 echo "= = = = Emulator = = = ="
 sudo apt install -y qemu-kvm
 
-echo "User name"
-read yourname
-sudo adduser $yourname /deb/kvm
-sudo chown $yourname /dev/kvm
+#echo "User name"
+#read yourname
+#sudo adduser $yourname /deb/kvm
+#sudo chown $yourname /dev/kvm
+echo "Add User to KVM"
+sudo adduser $USER /deb/kvm
+sudo chown $USER /dev/kvm
+
