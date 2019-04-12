@@ -20,3 +20,5 @@ echo "Other dependencies"
 sudo apt-get install -y winbind
 sudo apt-get install -y unrar-free p7zip-full
 
+echo "Create a 32-bit WINE prefix on a 64-bit Ubuntu system"
+WINEPREFIX="$HOME/prefix32" WINEARCH=win32 wine wineboot
