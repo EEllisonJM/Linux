@@ -3,5 +3,5 @@ echo "snapd is the service which runs on your machine and keeps track of your in
 sudo apt install -y snapd
 
 echo "Visual Studio Code"
-snap install vscode 
-snap install vscode --classic
+snap install code 
+snap install code --classic
