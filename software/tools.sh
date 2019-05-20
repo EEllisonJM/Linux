@@ -1,6 +1,9 @@
 #/bin/bash
-echo "= = = = Unar = = = = "
+echo "= = = = Unar = = = ="
 sudo apt install -y unrar
 
-echo "= = = = Gnome-tweak-tool = = = = "
+echo "= = = Net Tools = = ="
+sudo apt install net-tools
+
+echo "= = = = Gnome-tweak-tool = = = ="
 sudo apt install -y gnome-tweak-tool
