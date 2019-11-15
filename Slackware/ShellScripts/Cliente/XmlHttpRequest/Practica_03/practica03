@@ -1,0 +1,45 @@
+#!/bin/bash
+echo ' = XMLHttpRequest - Practica 03 = '
+echo 'Directorio ráiz: $HOME/www/xhr03'
+echo 'Puerto TCP: 8083'
+echo 'Nombre de host: xhr03.com'
+echo 'URL: http://xhr03.com:8083'
+echo ' = = = = = = = = = = = = = = = = = = = = = = = = = = = '
+echo 'Nota: Asociar dirección ip 127.0.0.1 a xhr03.com en el archivo /etc/hosts'
+echo ' = = = = = = = = = = = = = = = = = = = = = = = = = = = '
+echo '1. Default'
+echo '2. Personalizado'
+#Ubicacion de archivos a utilizar
+ubicacionArchivos=$HOME/Slackware/ShellScripts/Cliente/XmlHttpRequest/Practica_03
+#Leer opcion
+read opcion
+# Opcion [Default]
+if [ "$opcion" = "1" ]
+	then
+	directorioServidor=$HOME/www/xhr03/
+	#puerto=8083
+fi
+# Opcion [Default]
+if [ "$opcion" = "2" ]
+	then
+	echo 'Ingrese la ruta del servidor:'
+	read rutaServidor
+	echo 'Ingrese el puerto a utilizar'
+	read puertoPersonalizado
+	#Asignar valores
+	directorioServidor=$rutaServidor
+	#puerto=$puertoPersonalizado	
+fi
+#Crear directorio raiz  
+mkdir -p $directorioServidor
+cd $directorioServidor
+
+#Copiar archivo a servidor 
+cp -a $ubicacionArchivos/index.html $directorioServidor
+cp -a $ubicacionArchivos/js/ $directorioServidor
+cp -a $ubicacionArchivos/servidor.py $directorioServidor
+cp -a $ubicacionArchivos/cgi-bin $directorioServidor
+
+#Iniciar Servidor
+echo 'Iniciando sevidor...'
+python3 servidor.py

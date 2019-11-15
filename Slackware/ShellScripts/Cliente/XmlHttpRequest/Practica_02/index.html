@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="UTF-8">
+     <title>xhr02</title>
+        <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body onload="iniciar();">
+     <h1>xhr02</h1>
+       <form id="formulario">
+         <fieldset>
+           <legend>Entidades</legend>
+             <label for="archivo">Seleccione una entidad:</label>
+             <select id="archivo_a_descargar">
+               <option value="Aguascalientes.xml">Aguascalientes</option>
+               <option value="BajaCalifornia.xml">Baja California</option>
+               <option value=""></option>
+               <option value="EntidadQueNoExiste.xml">Entidad Que No Existe</option>
+               <option value="BajaCaliforniaSur.xml">Baja California Sur</option>
+               <option value=""></option>
+               <option value="Zacatecas.xml">Zacatecas</option>
+             </select>
+             <input type="button" value="Descargar" id="descargar" />
+         </fieldset>
+       </form>
+     <h1>Resultado: <span id="cantidad_de_codigos_postales"></span></h1>
+     <p id="mensaje"></p>
+     <table id="resultado"><thead></thead><tbody></tbody></table>
+   <script src="js/xhr02a.js"></script>
+   </body>
+ </html>

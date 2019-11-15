@@ -1,0 +1,45 @@
+body {
+         width: 960px;
+         margin: 10px auto 30px auto;
+       }
+       #archivo_a_descargar {
+         width: 100%;
+       }
+       #archivo_descargado {
+         width: 100%;
+         height: 200px;
+       }
+       #mensaje {
+         color: red;
+       }
+       #resultado {
+         width: 100%;
+         font-family: sans-serif;
+         color: #000;
+         font-size: 7px;
+         background: #ccc;
+         margin: 0;
+         border: #aaa 1px solid;
+       }
+       #resultado tr {
+         text-align: center;
+       }
+       #resultado th {
+         border-top: 1px solid #fafafa;
+         border-bottom:1px solid #e0e0e0;
+         background: #ededed;
+         text-align: center;
+       }
+       #resultado td {
+         border-top: 1px solid #ffffff;
+         border-bottom:1px solid #e0e0e0;
+         border-left: 1px solid #e0e0e0;
+         background: #fafafa;
+         text-align: center;
+       }
+       #resultado tr.even td {
+         background: #f6f6f6;
+       }
+       #resultado tr:hover td {
+         background: #f2f2f2;
+       }

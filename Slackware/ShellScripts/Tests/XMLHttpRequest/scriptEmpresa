@@ -1,0 +1,26 @@
+#!/bin/bash
+#Practica 2
+echo 'Directorio ráiz: $HOME/www/miEmpresa'
+echo 'Nombre de host: miEmpresa.com'
+echo 'URL: http://ajedrez.com:8081'
+
+#Variables
+directorioServidor=$HOME/www/miEmpresa
+puerto=8081
+
+ubicacionArchivos=$HOME/Slackware/ShellScripts/Tests/XMLHttpRequest
+
+
+mkdir -p $directorioServidor
+cd $directorioServidor
+#Copiar archivos a directorioServidor
+cp -a $ubicacionArchivos/index.html $directorioServidor
+cp -a $ubicacionArchivos/js $directorioServidor
+cp -a $ubicacionArchivos/csv $directorioServidor
+cp -a $ubicacionArchivos/img $directorioServidor
+cp -a $ubicacionArchivos/css $directorioServidor
+
+
+#Iniciar servidor
+thttpd -D -p $puerto -d $directorioServidor -nor -T UTF-8 -l -
+

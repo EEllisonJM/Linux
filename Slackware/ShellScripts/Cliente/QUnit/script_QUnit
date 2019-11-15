@@ -1,0 +1,48 @@
+#!/bin/bash
+#Crea los directorios css/qunit y js/lib/qunit:
+#mkdir -p css/qunit js/lib/qunit
+#Descarga los archivos de js y css de QUnit en los directorio anteriormente creados:
+#wget -c https://code.jquery.com/qunit/qunit-2.4.0.css -O css/qunit/qunit.css
+#wget -c https://code.jquery.com/qunit/qunit-2.4.0.js  -O js/lib/qunit/qunit.js
+pwd && tree
+#Ubicacion de archivos a utilizar
+directorioArchivos=$HOME/Slackware/ShellScripts/Cliente/QUnit
+echo ' = = = = = = = = = = = = = = = = = = = = = = = = = = = '
+echo '1. Default'
+echo '2. Personalizado'
+#Leer opcion
+read opcion
+# Opcion [Default]
+if [ "$opcion" = "1" ]
+	then
+	#Variables	
+	directorioServidor=$HOME/www/qunit
+	puerto=8080
+fi
+# Opcion [Personalizado]
+if [ "$opcion" = "2" ]
+	then
+	#Variables
+	echo 'Ingrese la ruta del servidor:'
+	read rutaServidor
+	echo 'Ingrese el puerto a utilizar'
+	read puertoPersonalizado
+	#Asignar valores
+	directorioServidor=$rutaServidor
+	puerto=$puertoPersonalizado
+fi
+
+#Crear directorioServidor y accede a él:
+mkdir -p $directorioServidor
+cd $directorioServidor
+
+#Copiar archivo a servidor 
+cp -a $directorioArchivos/index.html $directorioServidor
+cp -a $directorioArchivos/js/ $directorioServidor
+cp -a $directorioArchivos/css/ $directorioServidor
+
+#Iniciar Servidor web HTTP
+echo 'Iniciando sevidor...'
+thttpd -D -p $puerto -d $directorioServidor -nor -T UTF-8 -l -
+
+

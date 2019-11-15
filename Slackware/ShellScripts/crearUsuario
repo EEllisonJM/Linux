@@ -1,0 +1,15 @@
+#!/bin/bash
+#Agregar la cuenta de usuario al sistema operativo:
+pwd
+useradd -d /home/eellison -u 2001 -g users -G audio,cdrom,floppy,plugdev,video,power,netdev,lp,scanner -s /bin/bash eellison
+#Crear el directorio personal del usuario eellison y asignar permisos a dicho directorio:
+mkdir -p /home/eellison
+chown -R eellison:users /home/eellison 
+chmod 700 /home/eellison 
+ls -ld /home/eellison 
+#Asignar una contraseña (password) al usuario eellison para la autenticación e inicio de sesión:
+passwd eellison
+
+
+
+

@@ -1,0 +1,24 @@
+#!/bin/bash
+#Practica 1
+echo 'Directorio ráiz: $HOME/www/dom01'
+echo 'Puerto TCP: 8081'
+echo 'Nombre de host: dom01.com'
+echo 'URL: http://dom01.com:8081'
+
+directorioServidor=$HOME/www/dom01
+ubicacionArchivos=$HOME/Slackware/ShellScripts/Cliente/Dom/Practica_1
+puerto=8081
+
+mkdir -p $directorioServidor
+cd $directorioServidor
+
+cp -a $ubicacionArchivos/index.html $directorioServidor
+cp -a $ubicacionArchivos/js $directorioServidor
+
+#Iniciar servidor
+thttpd -D -p $puerto -d $directorioServidor -nor -T UTF-8 -l -
+
+
+
+
+

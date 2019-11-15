@@ -1,0 +1,94 @@
+#!/bin/bash
+#Git
+#[1]git-clone(1) (Clone a repository into a new directory.)
+git clone $URL
+cd $Directorio
+#[2] git-add(1) (Add file contents to the index.)
+git add $Archivo
+#git-branch(1) (List, create, or delete branches.)
+git branch $Rama
+#git-show-branch - (Show branches and their commits)
+git show-branch
+#git-checkout(1) (Switch branches or restore working tree files.)
+git checkout $Rama
+#git-commit(1) (Record changes to the repository.)
+#-m <msg>, --message=<msg>(Use the given <msg> as the commit message. If multiple -m options are given, their values are concatenated as separate paragraphs.)
+git commit -m $Mensaje
+#git-merge - (Join two or more development histories together)
+git merge $Rama
+#git-push - (Update remote refs along with associated objects)
+git push origin master
+#git-status - (Show the working tree status)
+git status 
+#git-fetch - (Download objects and refs from another repository)
+git fetch origin
+#The above command copies all branches from the remote refs/heads/ namespace and
+#stores them to the local#refs/remotes/origin/ namespace, unless the branch.<name>.
+#fetch option is used to specify a non-default refspec
+#git-pull - Fetch from and integrate with another repository or a local branch
+git pull
+#---------------------------------------
+#Git - working on wrong branch - [Copy changes to a new branch]
+git branch newBranch
+git stash
+git checkout newBranch
+git stash apply
+#---------------------------------------
+#Adding an existing project to GitHub using the command line
+#1. Create Folder "Test"
+#2. Go to Folder "Test"
+#3. reate a new Repository on Github.com with the name of "Test"
+#4. Initialize the local directory as a Git repository.
+git init
+#A5. dd the files in your new local repository. This stages them for the first commit.
+git add .
+#Commit the files that you've staged in your local repository.
+git commit -m "First commit"
+
+git remote add origin https://github.com/EEllisonJM/Test.git
+
+git push -u origin master
+#---------------------------------------
+#Ejemplo:
+#Clonar repositorio
+git clone https://github.com/EEllisonJM/Slackware.git
+#Ubicarse en el directorio Slackware
+cd Slackware
+#Crear una rama
+git branch miRama
+#Ir a mi rama
+git checkout miRama
+
+#Crear un archivo dentro de la rama "miRama"
+nano GitCommands
+#Agregar archivo a la rama
+git add GitCommands
+#Comentar lo hecho
+git commit -m "Archivo GitCommands creado"
+
+#Ir a la rama principal
+git checkout master
+#Unir la rama "miRama" con "master"
+git merge miRama
+#Subir a github
+git push origin master
+#Solicitara el nombre de usuario y la contraseña
+#Username for 'https://github.com': EEllison
+#Password for 'https://EEllison@github.com':
+git fetch origin
+git pull
+
+#NOTA:
+#Al realizar un commit por primera vez, puede salir el siguiente mensaje
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+#Solucion
+git config --global user.email "miCorreo@example.com"
+git config --global user.name "MiNombreDeUsuario"
+#Intentamos de nuevo y listo.
+

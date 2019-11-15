@@ -1,0 +1,53 @@
+#!/bin/bash
+#Practica 1
+echo 'Directorio ráiz: $HOME/www/examen01'
+echo 'Nombre de host: examen01.com'
+echo 'URL: http://examen01.com:8080'
+echo ' = = = = = = = = = = = = = = = = = = = = = = = = = = = '
+echo '1. Default'
+echo '2. Establecer puerto ($HOME/www/examen01)'
+echo '3. Establecer puerto y la ubicacion del servidor'
+#Leer opcion
+read opcion
+# Opcion [Default]
+if [ "$opcion" = "1" ]
+	then
+        echo 'Directorio servidor: $HOME/www/examen01'
+        echo 'Puerto: 8081'
+	#Variables
+	directorioServidor=$HOME/www/examen01
+	puerto=8081
+fi
+if [ "$opcion" = "2" ]
+	then
+	#Variables
+	directorioServidor=$HOME/www/examen01	
+        echo 'Directorio servidor: $HOME/www/examen01'
+	echo 'Ingrese el puerto a utilizar'
+	read puertoPersonalizado
+        puerto=$puertoPersonalizado
+fi
+if [ "$opcion" = "3" ]
+	then
+	#Variables
+	echo 'Ingrese la directorio servidor:'
+	read rutaServidor
+	echo 'Ingrese el puerto a utilizar'
+	read puertoPersonalizado
+	#Asignar valores
+	directorioServidor=$rutaServidor
+	puerto=$puertoPersonalizado
+fi
+
+ubicacionArchivos=$HOME/Slackware/ShellScripts/Examen/Examen01
+
+mkdir -p $directorioServidor
+cd $directorioServidor
+#Copiar archivos a directorioServidor
+cp -a $ubicacionArchivos/csv $directorioServidor
+cp -a $ubicacionArchivos/img $directorioServidor
+cp -a $ubicacionArchivos/index.html $directorioServidor
+cp -a $ubicacionArchivos/js $directorioServidor
+
+#Iniciar servidor
+thttpd -D -p $puerto -d $directorioServidor -nor -T UTF-8 -l -

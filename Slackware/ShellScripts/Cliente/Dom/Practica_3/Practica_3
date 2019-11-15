@@ -1,0 +1,20 @@
+#!/bin/bash
+echo 'Dom - Practica 3'
+echo 'Directorio ráiz: $HOME/www/dom03'
+echo 'Puerto TCP: 8083'
+echo 'Nombre de host: dom03.com'
+echo 'URL: http://dom03.com:8083'
+
+directorioServidor=$HOME/www/dom03/
+puerto=8083
+directorioArchivo=$HOME/Slackware/ShellScripts/Cliente/Dom/Practica_3
+
+mkdir -p $directorioServidor
+cd $directorioServidor
+#Mover los siguientes archivos y directorios:
+cp -a $directorioArchivo/index.html $directorioServidor
+cp -a $directorioArchivo/img/  $directorioServidor
+cp -a $directorioArchivo/js/  $directorioServidor
+
+#Iniciar servidor
+thttpd -D -p $puerto -d $directorioServidor -nor -T UTF-8 -l -

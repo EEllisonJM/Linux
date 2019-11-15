@@ -1,0 +1,20 @@
+#!/bin/bash
+
+	echo "Iniciando descarga ..."
+	cd $HOME/Descargas
+	wget -c https://az764295.vo.msecnd.net/stable/d0182c3417d225529c6d5ad24b7572815d0de9ac/code-stable-code_1.23.1-1525968403_amd64.tar.gz
+	
+	echo "Iniciando instalación ..."
+	mkdir -p $HOME/.local/opt/
+	cd $HOME/.local/opt/
+	tar xvf $HOME/Descargas/VSC/code-stable-code_1.23.1-1525968403_amd64.tar.gz
+	mv VSCode-linux-x64/ VisualStudioCode
+
+	echo "Terminal access"
+	mkdir -p $HOME/.local/bin/
+	printf "#!/bin/bash\n$HOME/.local/opt/VisualStudioCode/./code" > $HOME/.local/bin/VisualStudioCode
+	chmod +x $HOME/.local/bin/VisualStudioCode
+	echo "Iniciando eclipse"
+	$HOME/.local/opt/VisualStudioCode/./code
+
+

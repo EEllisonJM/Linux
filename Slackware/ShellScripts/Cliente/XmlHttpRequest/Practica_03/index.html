@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="UTF-8">
+     <title>xhr03</title>
+     <style>
+       body {
+         width: 960px;
+         margin: 10px auto 30px auto;
+       }
+       #archivo_a_descargar {
+         width: 100%;
+       }
+       #respuesta {
+         width: 100%;
+         background-color: #f2f2f2;
+       }
+       #mensaje {
+         color: red;
+       }
+     </style>
+   </head>
+   <body onload="App.main();">
+     <h1>xhr03</h1>
+     <form id="formulario">
+       <fieldset>
+         <legend>Formulario</legend>
+         <p>
+           <label for="nombre">Nombre:</label>
+           <input type="text" id="nombre" />
+         </p>
+         <p>
+           <label for="nacimiento">Año de nacimiento:</label>
+           <input type="text" id="nacimiento" />
+         </p>
+         <p>
+           <label for="metodo_http">Método HTTP:</label>
+           <select id="metodo_http">
+             <option value="GET">GET</option>
+             <option value="POST">POST</option>
+           </select>
+         </p>
+         <p>
+           <input type="button" value="Enviar" id="descargar" />
+        </p>
+       </fieldset>
+     </form>
+     <h1>Resultado:</h1>
+     <pre id="respuesta"></pre>
+     <p id="mensaje"></p>
+     <script src="js/xhr03a.js"></script>
+   </body>
+ </html>
+

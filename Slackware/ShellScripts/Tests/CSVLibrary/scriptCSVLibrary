@@ -1,0 +1,22 @@
+#!/bin/bash
+echo 'URL: http://CSVLibrary.com:8089'
+
+#Variables
+directorioServidor=$HOME/www/testCSVLibrary/
+puerto=8089
+
+#Ubicacion de archivos a utilizar
+directorioArchivos=$HOME/Slackware/ShellScripts/Tests/CSVLibrary
+
+#Crear directorio raiz  
+mkdir -p $directorioServidor
+cd $directorioServidor
+
+#Copiar archivo a servidor 
+cp -a $directorioArchivos/index.html $directorioServidor
+cp -a $directorioArchivos/js/ $directorioServidor
+
+#Iniciar Servidor web HTTP
+echo 'Iniciando sevidor Thttpd...'
+thttpd -D -p $puerto -d $directorioServidor -nor -T UTF-8 -l -
+pwd && tree

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dom05.com</title>
+    <link rel="stylesheet" href="css/pure/pure-min.css">
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="css/pure/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+      <link rel="stylesheet" href="css/pure/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <h1>dom05.com</h1>
+    <hr>
+    <h2>Eventos</h2>
+    <hr>
+      <h3>eventos01</h3>
+      <form class="pure-form">
+        <input type="text" id="numero" readonly="readonly" value="10" />
+        <input type="button" id="incrementar" value="Incrementar" class="pure-button pure-button-primary">
+        <input type="button" id="decrementar" value="Decrementar" class="pure-button pure-button-primary">
+      </form>
+    <hr>
+    <hr>
+      <h3>eventos02</h3>
+      <textarea id="texto_original"></textarea>
+      <p id="texto_copia"></p>
+    </hr>
+    <hr>
+      <h3>eventos03</h3>
+      <form class="pure-form">
+        <input type="number" id="nuevo_elemento" min="100" max="990" step="10" value="100"/>
+        <input type="button" id="agregar" value="Agregar" class="pure-button pure-button-primary">
+      </form>
+      <table class="pure-table">
+        <tbody>  
+          <tr id="cola">
+            <th scope="row">Inicio</th>
+            <td>NULL</td>
+            <th scope="row">Fin</th>
+          </tr>
+        </tbody>
+      </table>
+    </hr>
+    <hr>
+      <h3>eventos04</h3>
+      <form class="pure-form">
+        <select id="mayusculas_o_minusculas">
+          <option value="">Seleccione una opción</option>
+          <option value="a_mayusculas">A mayúscula</option>
+          <option value="a_minusculas">A minúscula</option>
+        </select>
+        <input type="email" name="correo" value="AAA" />
+        <input type="email" name="correo" value="bbb" />
+        <input type="email" name="correo" value="CCC" />
+        <input type="email" name="correo" value="ddd" />
+        <input type="email" name="correo" value="EeE" />
+        <input type="email" name="correo" value="fFf" />
+      </form>
+    </hr>
+    <script src="js/dom05a.js"></script>
+  </body>
+</html>

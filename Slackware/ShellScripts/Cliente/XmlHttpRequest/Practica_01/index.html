@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="UTF-8">
+     <title>xhr01</title>
+     <style>
+       body {
+         width: 960px;
+         margin: 10px auto 30px auto;
+       }
+       #archivo_a_descargar {
+         width: 100%;
+       }
+       #archivo_descargado {
+         width: 100%;
+         height: 200px;
+       }
+       #mensaje {
+         color: red;
+       }
+     </style>
+   </head>
+   <body onload="iniciar();">
+     <h1>xhr01</h1>
+       <form id="formulario">
+         <fieldset>
+           <legend>Entidades</legend>
+             <label for="archivo">Seleccione una entidad:</label>
+             <!-- Use the id (archivo_a_descargar) attribute to manipulate text with JavaScript: -->
+             <select id="archivo_a_descargar">
+               <option value="Aguascalientes.xml">Aguascalientes</option>
+               <option value="BajaCalifornia.xml">Baja California</option>
+               <option value="BajaCaliforniaSur.xml">Baja California Sur</option>
+               <option value=""></option>
+               <option value="Oaxaca.xml">Oaxaca</option>
+               <option value="EntidadQueNoExiste.xml">Entidad Que No Existe</option>
+               <option value="Zacatecas.xml">Zacatecas</option>
+             </select>
+             <input type="button" value="Descargar" id="descargar" />
+         </fieldset>
+       </form>
+     <h1>Resultado:</h1>
+     <p id="mensaje"></p>
+     <textarea id="archivo_descargado"></textarea>
+   <script src="js/xhr01a.js"></script>
+   </body>
+ </html>

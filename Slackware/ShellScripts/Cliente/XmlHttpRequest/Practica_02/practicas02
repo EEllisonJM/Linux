@@ -1,0 +1,50 @@
+#!/bin/bash
+
+echo ' = XMLHttpRequest - Practica 02 = '
+echo 'Directorio ráiz: $HOME/www/xhr02'
+echo 'Puerto TCP: 8082'
+echo 'Nombre de host: xhr02.com'
+echo 'URL: http://xhr02.com:8082'
+echo ' = = = = = = = = = = = = = = = = = = = = = = = = = = = '
+echo 'Nota: Asociar dirección ip 127.0.0.1 a xhr02.com en el archivo /etc/hosts'
+echo ' = = = = = = = = = = = = = = = = = = = = = = = = = = = '
+echo '1. Default'
+echo '2. Personalizado'
+
+#Ubicacion de archivos a utilizar
+directorioArchivos=$HOME/Slackware/ShellScripts/Cliente/XmlHttpRequest/Practica_02
+#Leer opcion
+read opcion
+# Opcion [Default]
+if [ "$opcion" = "1" ]
+	then
+	#Variables	
+	directorioServidor=$HOME/www/xhr02/
+	puerto=8082
+fi
+# Opcion [Personalizado]
+if [ "$opcion" = "2" ]
+	then
+	#Variables
+	echo 'Ingrese la ruta del servidor:'
+	read rutaServidor
+	echo 'Ingrese el puerto a utilizar'
+	read puertoPersonalizado
+	#Asignar valores
+	directorioServidor=$rutaServidor
+	puerto=$puertoPersonalizado
+fi
+#Crear directorio raiz  
+mkdir -p $directorioServidor
+cd $directorioServidor
+
+#Copiar archivo a servidor 
+cp -a $directorioArchivos/index.html $directorioServidor
+cp -a $directorioArchivos/js/ $directorioServidor
+cp -a $directorioArchivos/xml/ $directorioServidor
+cp -a $directorioArchivos/css/ $directorioServidor
+
+#Iniciar Servidor web HTTP
+echo 'Iniciando sevidor...'
+thttpd -D -p $puerto -d $directorioServidor -nor -T UTF-8 -l -
+pwd && tree
