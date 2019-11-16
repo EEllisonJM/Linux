@@ -1,0 +1,52 @@
+Instalación de Git
+
+    sudo apt install git
+
+Lo primero que deberías hacer cuando instalas Git es establecer tu nombre de usuario y dirección de correo electrónico. Esto es importante porque las confirmaciones de cambios (commits) en Git usan esta información, y es introducida de manera inmutable en los commits que envías:
+
+    git config --global user.name "EEllisonJM"
+    git config --global user.email ellison_jm@hotmail.com
+
+De nuevo, sólo necesitas hacer esto una vez si especificas la opción --global, ya que Git siempre usará esta información para todo lo que hagas en ese sistema.
+
+
+Comprobando tu configuración
+
+Si quieres comprobar tu configuración, puedes usar el comando git config --list para listar todas las propiedades que Git ha configurado:
+
+    git config --list
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Creating an SSH Key Pair for User Authentication
+
+    ssh-keygen
+
+    cd $HOME/.ssh
+
+    cat id_rsa
+
+    cat id_rsa.pub
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Instalación de NPM
+    
+    sudo apt install npm
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Instalación de MySQL
+
+    sudo apt install mysql-server mysql-client
+
+Configuración de MySQL
+
+    mysql_secure_installation
+    
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Listar archivos ocultos
+    
+    ls -la
+
+
+
+
+
