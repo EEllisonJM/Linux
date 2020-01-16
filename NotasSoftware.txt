@@ -39,13 +39,55 @@ Instalación de MySQL
 Configuración de MySQL
 
     mysql_secure_installation
-    
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Installing Packages on Debian and Ubuntu of MariaDB
+
+    sudo apt-get install mariadb-server mariadb-client
+
+Verify MariaDB service 
+
+    sudo systemctl status mariadb
+
+Verify MariaDB Version
+
+    mysql -V
+
+Configuración de MySQL
+
+    sudo mysql_secure_installation
+
+To log in to the MariaDB server as the root user type:
+# I had to use "sudo" since is new installation
+
+    sudo mysql -u root -p
+
+        mysql> USE mysql;
+        mysql> UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+        mysql> FLUSH PRIVILEGES;
+        mysql> exit;
+
+    service mysql restart
+
+
+=> Some Commands
+
+    show databases;
+
+    use DBNAME;
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Listar archivos ocultos
     
     ls -la
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Desinstalar paquete
 
+    sudo apt-get remove package-name
+    
+    p.e
+
+    sudo apt-get remove cruvi-inventarios
 
 
 
